@@ -1,0 +1,15 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixin' as mix;
+
+.background {
+    background-color: var.$primary-color;
+
+    section .container .judul,
+    .container .judul {
+        @include mix.bold;
+        @include mix.judul;
+    } 
+}
+
+
+

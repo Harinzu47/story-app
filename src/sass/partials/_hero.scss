@@ -1,0 +1,65 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixin' as mix;
+@use 'sass:map';
+
+main .hero {
+    padding-block: 14rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+
+    & > * {
+        padding: 16px;
+    }
+
+    .user-intro {
+        .name {
+          font-size: 2rem;
+          @include mix.bold;
+        }
+     
+     
+        .title {
+          font-size: 1rem;
+          margin-block-start: 8px;
+        }
+      }
+     
+     
+      .logo img {
+        width: 80%;
+        display: block;
+        margin-inline: auto;
+      }
+}
+
+@media screen and (min-width: map.get(var.$breakpoints, 'md')) {
+    main .hero {
+      flex-direction: row;
+   
+   
+      .user-info {
+        flex-grow: 1;
+        flex-basis: 60%;
+      }
+   
+   
+      .avatar {
+        flex-basis: 40%;
+      }
+   
+   
+      img {
+        width: 100%;
+      }
+    }
+  }
+   
+   
+  @media screen and (min-width: map.get(var.$breakpoints, 'lg')) {
+    main .hero .user-intro .name {
+      font-size: 3rem;
+    }
+  }
