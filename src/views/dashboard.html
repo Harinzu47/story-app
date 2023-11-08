@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="/img/logo.png" />
+    <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+  </head>
+  <body>
+    <header>
+      <nav-app brandName="<%= brandName %>"></nav-app>
+    </header>
+    <main class="background">
+      <section class="hero section" id="hero">
+        <div class="user-intro d-flex flex-column justify-content-center">
+          <h1 class="name">Story App</h1>
+          <p class="title">Story App adalah platform yang menyediakan pengalaman membaca dan berbagi berbagai jenis cerita dan konten berkualitas.</p>
+        </div>        
+        <div class="logo">
+          <img src="/img/logo.png" alt="logo" />
+        </div>
+      </section>
+      <section class="story section pb-3">
+        <div class="container">
+          <h1 class="text-center mb-2 judul">Story List</h1>
+          <div class="row row-cols-lg-3 row-cols-md-2" id="listStoryCard"></div>
+        </div>
+      </section>
+      <modal-story
+       title="Detil Story"
+       class="modal fade"
+       id="recordDetailModal"
+       data-bs-backdrop="static"
+       data-bs-keyboard="false"
+       tabindex="-1"
+      ></modal-story>
+    </main>
+    <footer class="footer-container">
+      <footer-app></footer-app>
+    </footer>
+  </body>
+</html>

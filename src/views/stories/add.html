@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="/img/logo.png" />
+    <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+  </head>
+  <body>
+    <header>
+      <nav-app brandName="<%= brandName %>"></nav-app>
+    </header>
+
+    <main class="background">
+      <div class="container d-flex flex-column align-items-center">
+        <h1 class="my-4 judul">Tambah Cerita Kamu Disini!</h1>
+        <form id="addStoryForm" method="post" enctype="multipart/form-data" novalidate class="w-100">
+          <div class="mb-3">
+            <label for="validationCustomStoryName" class="form-label">Nama:</label>
+            <input-with-validation
+              type="text"
+              class="form-control p-0"
+              id="validationCustomStoryName"
+              inputId="validationCustomStoryName"
+              invalidFeedbackMessage="Wajib diisi"
+              required
+            ></input-with-validation>
+          </div>
+          <div class="mb-3">
+            <label for="validationCustomNotes" class="form-label">Caption:</label>
+            <textarea-with-validation
+              id="validationCustomNotes"
+              class="form-control p-0"
+              inputId="validationCustomNotes"
+              invalidFeedbackMessage="Wajib diisi"
+              required
+            ></textarea-with-validation>
+          </div>
+          <div class="mb-3">
+            <label for="validationCustomEvidence" class="form-label">Gambar:</label>
+            <input-image-with-preview
+              id="inputImagePreviewEdit"
+              class="form-control p-0"
+              id="validationCustomEvidence"
+              inputId="validationCustomEvidence"
+              invalidFeedbackMessage="Wajib diisi"
+            ></input-image-with-preview>
+          </div>
+          <button type="submit" class="btn btn-light-green" id="submit">Submit</button>
+        </form>
+      </div>      
+    </main>
+
+    <footer class="footer-container">
+      <footer-app></footer-app>
+    </footer>
+  </body>
+</html>

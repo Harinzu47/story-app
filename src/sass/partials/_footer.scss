@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixin' as mix;
+
+.footer-container {
+    background-color: var.$secondary-color;
+     footer-app p {
+        color: white;
+        @include mix.bold;
+     }
+}

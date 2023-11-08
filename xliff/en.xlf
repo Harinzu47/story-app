@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="en" source-language="id" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="sf9a862bfd829397e">
+  <source>Dasbor</source>
+  <target>Dashboard</target>
+</trans-unit>
+<trans-unit id="saca1bb9c1da8e7da">
+  <source>Tambah Cerita</source>
+  <target>Add Story</target>
+</trans-unit>
+<trans-unit id="s1294d5a9c388214b">
+  <source>Story App oleh Khalid Jundullah</source>
+  <target>Story App by Khalid Jundullah</target>
+</trans-unit>
+<trans-unit id="sef49b2c68fd1e332">
+  <source>Nama</source>
+  <target>Name</target>
+</trans-unit>
+<trans-unit id="sc72cca9281ef6073">
+  <source>Tanggal</source>
+  <target>Date</target>
+</trans-unit>
+<trans-unit id="s772ce5f935d58e37">
+  <source>Deskripsi</source>
+  <target>Description</target>
+</trans-unit>
+<trans-unit id="s749c72374d54863f">
+  <source>Tutup</source>
+  <target>Close</target>
+</trans-unit>
+</body>
+</file>
+</xliff>
