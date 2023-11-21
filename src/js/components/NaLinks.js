@@ -1,8 +1,8 @@
-import { css, html, LitElement } from 'lit';
-import { msg, updateWhenLocaleChanges } from '@lit/localize';
+import { css, html, LitElement } from "lit";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 class NavLinks extends LitElement {
-    static styles = css`
+  static styles = css`
     button,
     ul button {
       display: none;
@@ -35,10 +35,10 @@ class NavLinks extends LitElement {
       ul.open {
         display: flex;
         flex-direction: column;
-        background-color: #B2C9AB; 
+        background-color: #b2c9ab;
         color: white;
         position: absolute;
-        top: 27px; 
+        top: 27px;
         left: 0;
         right: 0;
         z-index: 1000;
@@ -53,41 +53,56 @@ class NavLinks extends LitElement {
       }
     }
   `;
-  
-    constructor() {
-      super();
-      this.menuActive = false;
-      updateWhenLocaleChanges(this);
-    }
-  
-    render() {
-      return html`
-      <button @click=${() => this._showNavLink()} aria-label="navigation-menu-open">☰</button>
-      <ul>
-        <button @click=${() => this._hideNavLink()} aria-label="navigation-menu-close">X</button>
-        <nav-link content="${msg(`Dasbor`)}" to="/"></nav-link>
-        <nav-link content="${msg(`Tambah Cerita`)}" to="/stories/add.html"></nav-link>
-        <nav-link-auth class="d-none" id="userLoggedMenu"></nav-link-auth>
-        <nav-link content="${msg(`Masuk`)}" to="/auth/login.html" id="loginMenu"></nav-link>
-      </ul>
-      `;
-    }
-  
 
-    _showNavLink() {
-        const ul = this.shadowRoot.querySelector('ul');
-        const button = this.shadowRoot.querySelector('button');
-        ul.classList.add('open');
-        button.classList.add('hide');
-      }
-    
-      _hideNavLink() {
-        const ul = this.shadowRoot.querySelector('ul');
-        const button = this.shadowRoot.querySelector('button');
-        ul.classList.remove('open');
-        button.classList.remove('hide');
-      }
+  constructor() {
+    super();
+    this.menuActive = false;
+    updateWhenLocaleChanges(this);
   }
-  
-  customElements.define('nav-links', NavLinks);
-  
+
+  render() {
+    return html`
+      <button
+        @click=${() => this._showNavLink()}
+        aria-label="navigation-menu-open"
+      >
+        ☰
+      </button>
+      <ul>
+        <button
+          @click=${() => this._hideNavLink()}
+          aria-label="navigation-menu-close"
+        >
+          X
+        </button>
+        <nav-link content="${msg(`Dasbor`)}" to="/"></nav-link>
+        <nav-link
+          content="${msg(`Tambah Cerita`)}"
+          to="/stories/add.html"
+        ></nav-link>
+        <nav-link-auth class="d-none" id="userLoggedMenu"></nav-link-auth>
+        <nav-link
+          content="${msg(`Masuk`)}"
+          to="/auth/login.html"
+          id="loginMenu"
+        ></nav-link>
+      </ul>
+    `;
+  }
+
+  _showNavLink() {
+    const ul = this.shadowRoot.querySelector("ul");
+    const button = this.shadowRoot.querySelector("button");
+    ul.classList.add("open");
+    button.classList.add("hide");
+  }
+
+  _hideNavLink() {
+    const ul = this.shadowRoot.querySelector("ul");
+    const button = this.shadowRoot.querySelector("button");
+    ul.classList.remove("open");
+    button.classList.remove("hide");
+  }
+}
+
+customElements.define("nav-links", NavLinks);

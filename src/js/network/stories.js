@@ -1,10 +1,10 @@
-import ApiEndpoint from '../config/ApiEndpoint';
-import instance from '../config/ApiInstance';
+import ApiEndpoint from "../config/ApiEndpoint";
+import instance from "../config/ApiInstance";
 
 const Stories = {
   async getAllStories() {
-    return await instance('application/json')({
-      method: 'get',
+    return await instance("application/json")({
+      method: "get",
       url: ApiEndpoint.GET_ALL_STORIES,
     })
       .then((res) => {
@@ -16,8 +16,8 @@ const Stories = {
   },
 
   async addNewStory({ description, photo }) {
-    return await instance('multipart/form-data')({
-      method: 'post',
+    return await instance("multipart/form-data")({
+      method: "post",
       url: ApiEndpoint.ADD_NEW_STORY,
       data: {
         description: description,

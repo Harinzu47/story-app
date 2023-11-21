@@ -1,8 +1,8 @@
-import { LitElement, html, css } from 'lit';
-import { msg, updateWhenLocaleChanges } from '@lit/localize';
-import Utils from '../utils/utils';
-import Config from '../config/config';
-import CheckUserAuth from '../pages/auth/ChechkUserAuth';
+import { LitElement, html, css } from "lit";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import Utils from "../utils/utils";
+import Config from "../config/config";
+import CheckUserAuth from "../pages/auth/ChechkUserAuth";
 
 class NavLinkAuth extends LitElement {
   static styles = css`
@@ -87,7 +87,7 @@ class NavLinkAuth extends LitElement {
 
   render() {
     return html`
-    <img
+      <img
         class="user-photo-bar"
         src="https://ui-avatars.com/api/?name=User%20Name&background=random"
         alt="User Name"
@@ -104,15 +104,17 @@ class NavLinkAuth extends LitElement {
             <h3>${Utils.getName(Config.NAME)}</h3>
           </div>
           <hr />
-          <a class="sub-menu-link" id="userLogOut" @click=${this._userLogOut}>${msg(`Keluar`)}</a>
+          <a class="sub-menu-link" id="userLogOut" @click=${this._userLogOut}
+            >${msg(`Keluar`)}</a
+          >
         </div>
       </div>
     `;
   }
 
   _toogleProfile() {
-    const subMenuWrap = this.shadowRoot.querySelector('#subMenu');
-    subMenuWrap.classList.toggle('open-menu');
+    const subMenuWrap = this.shadowRoot.querySelector("#subMenu");
+    subMenuWrap.classList.toggle("open-menu");
   }
 
   _userLogOut(event) {
@@ -122,4 +124,4 @@ class NavLinkAuth extends LitElement {
   }
 }
 
-customElements.define('nav-link-auth', NavLinkAuth);
+customElements.define("nav-link-auth", NavLinkAuth);

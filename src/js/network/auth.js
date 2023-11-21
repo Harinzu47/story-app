@@ -1,10 +1,10 @@
-import ApiEndpoint from '../config/ApiEndpoint';
-import instance from '../config/ApiInstance';
+import ApiEndpoint from "../config/ApiEndpoint";
+import instance from "../config/ApiInstance";
 
 const Auth = {
   async register({ name, email, password }) {
-    return await instance('application/json')({
-      method: 'post',
+    return await instance("application/json")({
+      method: "post",
       url: ApiEndpoint.REGISTER,
       data: {
         name: name,
@@ -21,8 +21,8 @@ const Auth = {
   },
 
   async login({ email, password }) {
-    return await instance('application/json')({
-      method: 'post',
+    return await instance("application/json")({
+      method: "post",
       url: ApiEndpoint.LOGIN,
       data: {
         email: email,
