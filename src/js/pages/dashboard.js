@@ -1,14 +1,28 @@
+import CheckUserAuth from "./auth/ChechkUserAuth";
+import Stories from "../network/stories";
+import { load } from "npm";
+
 const Dashboard = {
     async init() {
+      CheckUserAuth.checkLoginState();
       await this._initialData();
       this._initialListener();
     },
 
     async _initialData() {
-        const fetchRecords = await fetch('/data/DATA.json');
-        const responseRecords = await fetchRecords.json();
+      const loaderSpinner = document.getElementById('loaderSpinner');
+      loaderSpinner.style.visibility = 'visible';
+      try {
+        const response = await Stories.getAllStories();
+        const responseRecords = response.data;
         this._listStory = responseRecords.listStory;
-        await this._populateStoryRecordToCard(this._listStory);
+        this._populateStoryRecordToCard(this._listStory);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        loaderSpinner.style.visibility = 'hidden';
+      }
+
       },
 
       _initialListener() {

@@ -12,6 +12,7 @@
     </header>
 
     <main class="background">
+      <loader-spinner></loader-spinner>
       <div class="container d-flex flex-column align-items-center">
         <h1 class="my-4 judul">Tambah Cerita Kamu Disini!</h1>
         <form id="addStoryForm" method="post" enctype="multipart/form-data" novalidate class="w-100">
@@ -20,7 +21,6 @@
             <input-with-validation
               type="text"
               class="form-control p-0"
-              id="validationCustomStoryName"
               inputId="validationCustomStoryName"
               invalidFeedbackMessage="Wajib diisi"
               required
@@ -29,7 +29,6 @@
           <div class="mb-3">
             <label for="validationCustomNotes" class="form-label">Caption:</label>
             <textarea-with-validation
-              id="validationCustomNotes"
               class="form-control p-0"
               inputId="validationCustomNotes"
               invalidFeedbackMessage="Wajib diisi"
@@ -39,9 +38,7 @@
           <div class="mb-3">
             <label for="validationCustomEvidence" class="form-label">Gambar:</label>
             <input-image-with-preview
-              id="inputImagePreviewEdit"
               class="form-control p-0"
-              id="validationCustomEvidence"
               inputId="validationCustomEvidence"
               invalidFeedbackMessage="Wajib diisi"
               required

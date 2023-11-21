@@ -33,10 +33,12 @@
   "dependencies": {
     "@lit/localize": "^0.12.1",
     "@popperjs/core": "2.11.6",
+    "axios": "^1.6.1",
     "bootstrap": "5.2.2",
     "bootstrap-icons": "^1.11.1",
     "install": "^0.13.0",
     "lit": "^2.8.0",
-    "npm": "^10.2.3"
+    "npm": "^10.2.3",
+    "path-browserify": "^1.0.1"
   }
 }

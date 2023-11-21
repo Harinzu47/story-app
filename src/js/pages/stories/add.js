@@ -1,5 +1,9 @@
+import CheckUserAuth from "../auth/ChechkUserAuth";
+import Stories from "../../network/stories";
+
 const Add = {
     async init() {
+      CheckUserAuth.checkLoginState();
       this._initialListener();
     },
   
@@ -18,33 +22,43 @@ const Add = {
       );
     },
   
-    _sendPost() {
+    async _sendPost() {
       const formData = this._getFormData();
   
       if (this._validateFormData({ ...formData })) {
         console.log('formData');
         console.log(formData);
+        const loaderSpinner = document.getElementById('loaderSpinner');
+        loaderSpinner.style.visibility = 'visible';
+        try {
+          const response = await Stories.addNewStory(formData);
+          if (response.status === 201) {
+            window.alert('Story Baru Berhasil Ditambahkan');
+            this._goToDashboardPage();
+          } else {
+            window.alert(`${response.response.data.message}`);
+          }
+        } catch (error) {
+          console.error(error);
+        } finally {
+          loaderSpinner.style.visibility = 'hidden';
+        }
       }
     },
   
     _getFormData() {
-      const nameInput = document.querySelector('#validationCustomStoryName');
       const descriptionInput = document.querySelector('#validationCustomNotes');
       const evidenceInput = document.querySelector('#validationCustomEvidence');
   
-      var date = new Date().toISOString();
-  
       return {
-        id: `story-${Math.random().toString(17).substring(2, 17)}`,
-        name: nameInput.value,
         description: descriptionInput.value,
-        photoUrl: evidenceInput.files[0],
-        createdAt: date,
+        photo: evidenceInput.files[0],
       };
     },
   
     _validateFormData(formData) {
-      const formDataFiltered = Object.values(formData).filter((item) => item === '');
+      const formDataFiltered = Object.values(formData).filter((item) => item === '' 
+      || item === undefined || item === null,);
   
       return formDataFiltered.length === 0;
     },

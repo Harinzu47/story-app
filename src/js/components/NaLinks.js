@@ -67,9 +67,12 @@ class NavLinks extends LitElement {
         <button @click=${() => this._hideNavLink()} aria-label="navigation-menu-close">X</button>
         <nav-link content="${msg(`Dasbor`)}" to="/"></nav-link>
         <nav-link content="${msg(`Tambah Cerita`)}" to="/stories/add.html"></nav-link>
+        <nav-link-auth class="d-none" id="userLoggedMenu"></nav-link-auth>
+        <nav-link content="${msg(`Masuk`)}" to="/auth/login.html" id="loginMenu"></nav-link>
       </ul>
       `;
     }
+  
 
     _showNavLink() {
         const ul = this.shadowRoot.querySelector('ul');
