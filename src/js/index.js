@@ -9,6 +9,7 @@ import Dashboard from "./pages/dashboard";
 import AddStory from "./pages/stories/add";
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register";
+import "./utils/firebase";
 import * as bootstrap from "bootstrap";
 
 const routes = {
